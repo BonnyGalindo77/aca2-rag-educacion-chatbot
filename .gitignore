@@ -1,0 +1,11 @@
+# Credenciales: NUNCA se versionan
+.env
+.streamlit/secrets.toml
+# Artefactos locales
+qdrant_local/
+data/estudiantes.db
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+entregables/poster.html
