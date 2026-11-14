@@ -15,6 +15,7 @@ import sys
 from pathlib import Path
 
 import qrcode
+import re
 import qrcode.image.svg
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -59,14 +60,18 @@ def construir_html():
     logo = img64("assets/logo_cun.png")
     arq = (RAIZ / "assets" / "arquitectura_rag.svg").read_text(encoding="utf-8")
     cap_chat, cap_gest = img64("assets/captura_chat.png"), img64("assets/captura_gestion.png")
+    fig_eval = img64("resultados/fig_evaluacion.png")
     lat_llm = gen.get("latencia_llm_ms_mediana")
-    modelo_llm = ev.get("modelo_llm") or "gemini-2.5-flash"
+    modelo_llm = "gemini-3.5-flash"
+    modelo_eval = ev.get("modelo_llm") or modelo_llm
 
     ejemplo = next((c for c in ev.get("casos", []) if c.get("id") == "G1" and c.get("estado") == "ok"), None)
     if ejemplo:
-        resp = html.escape(ejemplo["respuesta"]).replace("\n", "<br>")
-        if len(resp) > 620:
-            resp = resp[:620].rsplit(" ", 1)[0] + "…"
+        resp = html.escape(ejemplo["respuesta"])
+        resp = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", resp)
+        resp = re.sub(r"(^|\n)\s*[\*\-]\s+", r"\1• ", resp).replace("\n", "<br>")
+        if len(resp) > 430:
+            resp = resp[:430].rsplit(" ", 1)[0] + "…"
         fuentes = " · ".join(html.escape(f) for f in ejemplo["fuentes"][:3])
         ejemplo_html = (f'<div class="q">“{html.escape(ejemplo["pregunta"])}”</div><div class="a">{resp}</div>'
                         f'<div class="src">Fuentes: {fuentes}</div>')
@@ -87,18 +92,18 @@ def construir_html():
 @page {{ size: 297mm 420mm; margin: 0; }}
 * {{ box-sizing: border-box; }}
 body {{ margin:0; width:297mm; height:420mm; font-family: Inter, Arial, sans-serif; color:#1F2A33; background:#EEF3F6;
-       font-size:8.6pt; line-height:1.36; }}
+       font-size:8.1pt; line-height:1.32; }}
 a {{ color:#0B4F6C; text-decoration:underline; word-break:break-all; }}
-.head {{ background: linear-gradient(115deg,#082E47 0%,#0B4F6C 62%,#1F7A8C 100%); color:#fff; padding:7mm 9mm 6mm; display:flex;
+.head {{ background: linear-gradient(115deg,#082E47 0%,#0B4F6C 62%,#1F7A8C 100%); color:#fff; padding:4.5mm 9mm 4mm; display:flex;
         gap:7mm; align-items:center; }}
-.logo {{ height:21mm; background:#fff; border-radius:3mm; padding:2.2mm 3mm; }}
+.logo {{ height:19mm; background:#fff; border-radius:3mm; padding:2.2mm 3mm; }}
 .logo.ph {{ width:42mm; display:flex; align-items:center; justify-content:center; color:#0B4F6C; font-weight:700; }}
 .kicker {{ font-size:7.4pt; letter-spacing:.14em; text-transform:uppercase; color:#BFDCE6; }}
-h1 {{ margin:1.2mm 0 1mm; font-size:21pt; line-height:1.12; font-weight:800; letter-spacing:-.01em; }}
+h1 {{ margin:1mm 0 0.8mm; font-size:19.5pt; line-height:1.12; font-weight:800; letter-spacing:-.01em; }}
 h1 span {{ color:#FFB347; }}
 .team {{ font-size:9pt; color:#E6F1F5; }} .team b {{ color:#fff; }}
-.grid {{ display:grid; grid-template-columns: repeat(12, 1fr); gap:3.4mm; padding:4mm 6mm 0; }}
-.card {{ background:#fff; border-radius:2.6mm; padding:3.2mm 3.8mm; border-top:1.3mm solid #0B4F6C; box-shadow:0 .4mm 1.2mm rgba(0,0,0,.06); }}
+.grid {{ display:grid; grid-template-columns: repeat(12, 1fr); gap:3mm; padding:3.4mm 6mm 0; }}
+.card {{ background:#fff; border-radius:2.6mm; padding:2.8mm 3.6mm; border-top:1.3mm solid #0B4F6C; box-shadow:0 .4mm 1.2mm rgba(0,0,0,.06); }}
 .card h2 {{ margin:0 0 1.8mm; font-size:9.4pt; letter-spacing:.07em; text-transform:uppercase; color:#0B3C5D; }}
 .c-or {{ border-top-color:#E07A1F; }} .c-mo {{ border-top-color:#7B4FA0; }} .c-ve {{ border-top-color:#2E8B57; }} .c-te {{ border-top-color:#1F7A8C; }}
 .s3 {{ grid-column: span 3; }} .s4 {{ grid-column: span 4; }} .s5 {{ grid-column: span 5; }} .s6 {{ grid-column: span 6; }}
@@ -121,7 +126,7 @@ td b {{ color:#0B3C5D; }}
 .paso b {{ font-size:8.2pt; color:#0B3C5D; }} .paso div {{ font-size:7.2pt; margin-top:.8mm; color:#3B4750; }}
 .arq svg {{ width:100%; height:auto; display:block; }}
 .shots {{ display:grid; grid-template-columns:1fr 1fr; gap:2mm; }}
-.shots img {{ width:100%; border-radius:1.4mm; border:.3mm solid #D3E3EC; display:block; }}
+.shots img {{ width:100%; height:37mm; object-fit:cover; object-position:top left; border-radius:1.4mm; border:.3mm solid #D3E3EC; display:block; }}
 .shots .cap {{ font-size:6.8pt; color:#5B6770; margin-top:.6mm; }}
 .shotph {{ height:40mm; border:.4mm dashed #9DB5C2; border-radius:1.4mm; display:flex; align-items:center; justify-content:center;
           color:#5B6770; font-size:7.6pt; text-align:center; padding:2mm; }}
@@ -130,12 +135,12 @@ td b {{ color:#0B3C5D; }}
 .src {{ font-size:6.8pt; color:#5B6770; margin-top:1mm; }}
 .pend {{ color:#9A6A2F; font-style:italic; }}
 ul {{ margin:0; padding-left:4mm; }} li {{ margin-bottom:1.1mm; }}
-.links {{ display:flex; flex-direction:column; gap:2.4mm; }}
+.links {{ display:flex; flex-direction:column; gap:1.6mm; }}
 .link {{ display:flex; gap:2.6mm; align-items:center; font-size:7.6pt; }}
-.qr {{ width:19mm; height:19mm; flex:none; }}
+.qr {{ width:16mm; height:16mm; flex:none; }}
 .qrph {{ width:19mm; height:19mm; border:.4mm dashed #9DB5C2; display:flex; align-items:center; justify-content:center; color:#9DB5C2; flex:none; }}
-.refs p {{ font-size:6.6pt; line-height:1.3; margin:0 0 1mm; padding-left:3mm; text-indent:-3mm; }}
-.foot {{ position:absolute; bottom:0; left:0; right:0; background:#082E47; color:#BFDCE6; font-size:7pt; padding:2mm 9mm;
+.refs p {{ font-size:6.3pt; line-height:1.3; margin:0 0 1mm; padding-left:3mm; text-indent:-3mm; }}
+.foot {{ position:absolute; bottom:0; left:0; right:0; background:#082E47; color:#BFDCE6; font-size:6.6pt; padding:1.4mm 9mm;
         display:flex; justify-content:space-between; }}
 .met {{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.6mm; margin:1.4mm 0 2mm; }}
 .met .kpi .v {{ font-size:11.5pt; color:#0B4F6C; }}
@@ -171,7 +176,7 @@ Docente: Hamilton Rivera Flor · Pilar 2: Educación · Noviembre de 2026</div><
   <tr><td><b>Dataset UCI</b> (Realinho et al., 2021)</td><td>4.424 estudiantes · 36 variables → SQL → fichas y modelo de riesgo</td><td>10</td></tr></table></div>
  <div class="card s7"><h2>Metodología (ruta del ACA 2)</h2><div class="pasos">
   <div class="paso"><span class="nn">1</span><b>Conexión vectorial</b><div>Colección del ACA 1 reutilizada; consulta con gemini-embedding-2 (768 d) y Top-k con filtros.</div></div>
-  <div class="paso"><span class="nn">2</span><b>Configuración LLM</b><div>{html.escape(modelo_llm)} · T 0,2 · top-p 0,9 · 1.024 tokens · llaves en st.secrets.</div></div>
+  <div class="paso"><span class="nn">2</span><b>Configuración LLM</b><div>{html.escape(modelo_llm)} · T 0,2 · top-p 0,9 · 2.048 tokens · llaves en st.secrets.</div></div>
   <div class="paso"><span class="nn">3</span><b>Pipeline RAG</b><div>Umbral 0,645, contexto numerado, citas [n], memoria y reescritura de seguimiento.</div></div>
   <div class="paso"><span class="nn">4</span><b>Interfaz</b><div>Streamlit Cloud: chat con historial, fuentes, gestión documental y alerta temprana.</div></div>
   <div class="paso"><span class="nn">5</span><b>Evaluación</b><div>Hit@k, MRR, LLM como juez, abstención, inyección y latencia por etapa.</div></div>
@@ -198,12 +203,16 @@ Docente: Hamilton Rivera Flor · Pilar 2: Educación · Noviembre de 2026</div><
    <div class="kpi"><div class="v">{n(rec.get('lat_qdrant_ms_mediana'), 0)} ms</div><div class="l">búsqueda Qdrant (mediana)</div></div>
    <div class="kpi"><div class="v">{n((lat_llm or 0) / 1000, 1) if lat_llm else '—'} s</div><div class="l">generación LLM (mediana)</div></div>
   </div>
-  <div class="q" style="font-size:7.6pt">Ejemplo de interacción con cita</div>{ejemplo_html}</div>
+  <div class="nota" style="margin:-0.6mm 0 1.6mm">Corrida en Colab del {html.escape(ev.get("fecha", "")[:10])}: 14 consultas de recuperación y
+  10 casos de generación y robustez, respondidos con {html.escape(modelo_eval)} (respaldo automático del cliente); juez: Gemini, temperatura 0.</div>
+  {f'<img src="{fig_eval}" style="width:100%;margin-top:1.5mm;border-radius:1mm">' if fig_eval else ''}
+</div>
 
  <div class="card s7 c-ve"><h2>Vista previa de la aplicación (Streamlit Community Cloud)</h2><div class="shots">
   {f'<div><img src="{cap_chat}"><div class="cap">Chatbot: respuesta en streaming con citas, fuentes, página, similitud y latencias.</div></div>' if cap_chat else '<div class="shotph">Captura del chat (se agrega tras el despliegue)</div>'}
   {f'<div><img src="{cap_gest}"><div class="cap">Gestión documental: estado del clúster, inventario, explorador de fragmentos y búsqueda de prueba.</div></div>' if cap_gest else '<div class="shotph">Captura de gestión documental (se agrega tras el despliegue)</div>'}
- </div></div>
+ </div>
+ <div class="q" style="font-size:7.6pt;margin-top:2mm">Ejemplo real de interacción con cita</div>{ejemplo_html}</div>
 
  <div class="card s5"><h2>Conclusiones</h2><ul>
   <li><b>Ciclo RAG completo a costo cero:</b> la colección del ACA 1 se reutilizó sin reindexar; solo se necesitó vectorizar la consulta con el mismo modelo.</li>
@@ -235,7 +244,7 @@ async def a_pdf(html_txt, destino):
         pg = await b.new_page()
         await pg.set_content(html_txt, wait_until="networkidle")
         await pg.wait_for_timeout(600)
-        alto = await pg.evaluate("Math.max(...[...document.querySelectorAll('.card')].map(e => e.getBoundingClientRect().bottom))")
+        alto = await pg.evaluate("Math.max(...[...document.querySelectorAll('.card')].map(e => e.getBoundingClientRect().bottom)) + document.querySelector('.foot').getBoundingClientRect().height")
         await pg.pdf(path=str(destino), width="297mm", height="420mm", print_background=True)
         await b.close()
         return alto

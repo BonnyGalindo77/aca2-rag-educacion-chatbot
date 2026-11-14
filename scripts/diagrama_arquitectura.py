@@ -55,7 +55,7 @@ def svg():
              ("Qdrant Cloud", "Top-k · coseno|filtros de payload", AZUL2, AZUL2, "#fff", "1"),
              ("Umbral 0,645", "relevancia mínima|calibrada en ACA 1", MOR, "#FFFFFF", None, "3"),
              ("Prompt aumentado", "reglas + contexto [n]|+ evidencia dataset", TEAL, "#FFFFFF", None, "3"),
-             ("Gemini 2.5 Flash", "T 0,2 · top-p 0,9|1.024 tokens · stream", NAR, NAR, "#fff", "2"),
+             ("Gemini 3.5 Flash", "T 0,2 · top-p 0,9|2.048 tokens · stream", NAR, NAR, "#fff", "2"),
              ("Respuesta", "citas verificadas|fuentes · latencias", VERDE, "#FFFFFF", None, "5")]
     for x, (t, s, c, r, tx, paso) in zip(xs, nodos):
         p.append(caja(x, y, w, h, t, s, c, r, tx))
