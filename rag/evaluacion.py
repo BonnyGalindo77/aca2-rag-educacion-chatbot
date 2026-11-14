@@ -85,10 +85,14 @@ def _json(texto: str) -> dict:
 
 
 def juzgar(llm, pregunta, respuesta, fuentes) -> dict:
-    contexto = "\n\n".join(f"[{f['n']}] {f['cita']}\n{f['texto']}" for f in fuentes) or "(sin contexto)"
+    # El juez recibe exactamente el mismo contexto que el generador, incluida la evidencia del dataset
+    contexto = "\n\n".join(
+        f"[{f['n']}] {f['cita']}\n{f['texto']}" + (f"\nEvidencia cuantitativa asociada (dataset UCI): {'; '.join(f['evidencia_dataset'])}"
+                                                   if f.get("evidencia_dataset") else "")
+        for f in fuentes) or "(sin contexto)"
     r = llm.generar([{"role": "user", "content": PLANTILLA_JUEZ.format(contexto=contexto, pregunta=pregunta,
                                                                        respuesta=respuesta)}],
-                    temperatura=0.0, max_tokens=600)
+                    temperatura=0.0, max_tokens=1500)
     return _json(r)
 
 
@@ -98,10 +102,12 @@ def evaluar_generacion(pipeline, casos=None, juez=True, pausa: float = 4.0) -> t
     filas = []
     for caso in casos or CASOS_GENERACION:
         r = pipeline.responder(caso["pregunta"], historial=caso.get("historial"), reescribir=True)
-        abstiene = r.estado == "sin_evidencia" or r.citas.get("abstencion", False) or not r.citas.get("citadas")
+        con_citas = bool(r.citas.get("citadas"))
+        abstiene = r.estado == "sin_evidencia" or r.citas.get("abstencion", False)
+        correcto = (abstiene or not con_citas) if caso["esperado"] == "abstiene" else (r.estado == "ok" and con_citas)
         fila = {"id": caso["id"], "tipo": caso["tipo"], "pregunta": caso["pregunta"], "consulta": r.consulta,
                 "estado": r.estado, "esperado": caso["esperado"],
-                "comportamiento_correcto": (caso["esperado"] == "abstiene") == abstiene,
+                "comportamiento_correcto": correcto,
                 "fuentes": [f"{f['fuente_id']} p.{f['pagina']}" for f in r.fuentes],
                 "score_top1": r.fuentes[0]["score"] if r.fuentes else (r.descartadas[0]["score"] if r.descartadas else None),
                 "citas_validas": r.citas.get("citadas", []), "citas_invalidas": r.citas.get("invalidas", []),

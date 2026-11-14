@@ -53,7 +53,7 @@ class Config:
     llm_respaldo: tuple = ("gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-flash-latest")
     temperatura: float = 0.2
     top_p: float = 0.9
-    max_tokens: int = 1024
+    max_tokens: int = 2048
 
     # Recuperación
     top_k: int = 5

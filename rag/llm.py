@@ -3,7 +3,7 @@
 Hiperparámetros por defecto y su justificación:
 * temperature = 0.2  → respuestas estables y apegadas al contexto; un RAG normativo no necesita creatividad.
 * top_p = 0.9        → recorta la cola de tokens poco probables sin volver la salida repetitiva.
-* max_output_tokens = 1024 → suficiente para ~220 palabras con citas, con margen.
+* max_output_tokens = 2048 → ~220 palabras con citas más el margen que consume el razonamiento interno del modelo.
 * razonamiento interno ("thinking") al mínimo → baja la latencia; la tarea es extractiva.
 """
 from __future__ import annotations
