@@ -1,0 +1,72 @@
+[
+ {
+  "factor": "Deudor con la institución",
+  "categoria": "financiero",
+  "variable": "debtor",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: deudor con la institución, es decir, tener deudas pendientes con la institución. La deserción global de la cohorte es 32,1 %. Resultados por grupo: Sí: 62,0 % de deserción, 20,1 % de graduación (n = 503); No: 28,3 % de deserción, 53,8 % de graduación (n = 3921). El grupo con mayor deserción es «Sí» (62,0 %) y el de menor deserción es «No» (28,3 %), una diferencia de 33,7 puntos porcentuales. Este factor se relaciona con riesgo de tipo financiero en la permanencia estudiantil.",
+  "evidencia": "Deudor con la institución: «Sí» 62,0 % vs «No» 28,3 % de deserción"
+ },
+ {
+  "factor": "Matrícula al día",
+  "categoria": "financiero",
+  "variable": "tuition_fees_up_to_date",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: matrícula al día, es decir, tener el pago de la matrícula al día. La deserción global de la cohorte es 32,1 %. Resultados por grupo: No: 86,6 % de deserción, 5,5 % de graduación (n = 528); Sí: 24,7 % de deserción, 56,0 % de graduación (n = 3896). El grupo con mayor deserción es «No» (86,6 %) y el de menor deserción es «Sí» (24,7 %), una diferencia de 61,9 puntos porcentuales. Este factor se relaciona con riesgo de tipo financiero en la permanencia estudiantil.",
+  "evidencia": "Matrícula al día: «No» 86,6 % vs «Sí» 24,7 % de deserción"
+ },
+ {
+  "factor": "Becado",
+  "categoria": "financiero",
+  "variable": "scholarship_holder",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: becado, es decir, contar con beca. La deserción global de la cohorte es 32,1 %. Resultados por grupo: No: 38,7 % de deserción, 41,3 % de graduación (n = 3325); Sí: 12,2 % de deserción, 76,0 % de graduación (n = 1099). El grupo con mayor deserción es «No» (38,7 %) y el de menor deserción es «Sí» (12,2 %), una diferencia de 26,5 puntos porcentuales. Este factor se relaciona con riesgo de tipo financiero en la permanencia estudiantil.",
+  "evidencia": "Becado: «No» 38,7 % vs «Sí» 12,2 % de deserción"
+ },
+ {
+  "factor": "Aprobación de asignaturas sem. 1",
+  "categoria": "academico",
+  "variable": "banda_aprob_sem1",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: aprobación de asignaturas sem. 1, es decir, el porcentaje de asignaturas aprobadas en el primer semestre. La deserción global de la cohorte es 32,1 %. Resultados por grupo: 0 % aprobado: 91,6 % de deserción, 0,4 % de graduación (n = 538); 1–50 %: 70,4 % de deserción, 3,5 % de graduación (n = 423); sin asignaturas inscritas: 42,8 % de deserción, 41,7 % de graduación (n = 180); 51–99 %: 25,9 % de deserción, 46,4 % de graduación (n = 1555); 100 % aprobado: 8,7 % de deserción, 80,7 % de graduación (n = 1728). El grupo con mayor deserción es «0 % aprobado» (91,6 %) y el de menor deserción es «100 % aprobado» (8,7 %), una diferencia de 82,9 puntos porcentuales. Este factor se relaciona con riesgo de tipo academico en la permanencia estudiantil.",
+  "evidencia": "Aprobación de asignaturas sem. 1: «0 % aprobado» 91,6 % vs «100 % aprobado» 8,7 % de deserción"
+ },
+ {
+  "factor": "Edad al ingresar",
+  "categoria": "socioeconomico_personal",
+  "variable": "banda_edad",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: edad al ingresar, es decir, la edad al momento de ingresar. La deserción global de la cohorte es 32,1 %. Resultados por grupo: 25–34 años: 56,5 % de deserción, 27,7 % de graduación (n = 697); 35 años o más: 53,7 % de deserción, 34,5 % de graduación (n = 441); 21–24 años: 33,7 % de deserción, 44,4 % de graduación (n = 735); 17–20 años: 21,2 % de deserción, 60,3 % de graduación (n = 2551). El grupo con mayor deserción es «25–34 años» (56,5 %) y el de menor deserción es «17–20 años» (21,2 %), una diferencia de 35,3 puntos porcentuales. Este factor se relaciona con riesgo de tipo socioeconomico personal en la permanencia estudiantil.",
+  "evidencia": "Edad al ingresar: «25–34 años» 56,5 % vs «17–20 años» 21,2 % de deserción"
+ },
+ {
+  "factor": "Jornada",
+  "categoria": "socioeconomico_personal",
+  "variable": "daytime_evening_attendance",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: jornada, es decir, la jornada de estudio. La deserción global de la cohorte es 32,1 %. Resultados por grupo: Nocturna: 42,9 % de deserción, 41,6 % de graduación (n = 483); Diurna: 30,8 % de deserción, 51,0 % de graduación (n = 3941). El grupo con mayor deserción es «Nocturna» (42,9 %) y el de menor deserción es «Diurna» (30,8 %), una diferencia de 12,1 puntos porcentuales. Este factor se relaciona con riesgo de tipo socioeconomico personal en la permanencia estudiantil.",
+  "evidencia": "Jornada: «Nocturna» 42,9 % vs «Diurna» 30,8 % de deserción"
+ },
+ {
+  "factor": "Sexo",
+  "categoria": "socioeconomico_personal",
+  "variable": "gender",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: sexo, es decir, el sexo del estudiante. La deserción global de la cohorte es 32,1 %. Resultados por grupo: Hombre: 45,1 % de deserción, 35,2 % de graduación (n = 1556); Mujer: 25,1 % de deserción, 57,9 % de graduación (n = 2868). El grupo con mayor deserción es «Hombre» (45,1 %) y el de menor deserción es «Mujer» (25,1 %), una diferencia de 20,0 puntos porcentuales. Este factor se relaciona con riesgo de tipo socioeconomico personal en la permanencia estudiantil.",
+  "evidencia": "Sexo: «Hombre» 45,1 % vs «Mujer» 25,1 % de deserción"
+ },
+ {
+  "factor": "Desplazado",
+  "categoria": "socioeconomico_personal",
+  "variable": "displaced",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: desplazado, es decir, vivir desplazado de su lugar de origen. La deserción global de la cohorte es 32,1 %. Resultados por grupo: No: 37,6 % de deserción, 44,3 % de graduación (n = 1998); Sí: 27,6 % de deserción, 54,6 % de graduación (n = 2426). El grupo con mayor deserción es «No» (37,6 %) y el de menor deserción es «Sí» (27,6 %), una diferencia de 10,0 puntos porcentuales. Este factor se relaciona con riesgo de tipo socioeconomico personal en la permanencia estudiantil.",
+  "evidencia": "Desplazado: «No» 37,6 % vs «Sí» 27,6 % de deserción"
+ },
+ {
+  "factor": "Necesidades educativas especiales",
+  "categoria": "socioeconomico_personal",
+  "variable": "educational_special_needs",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: necesidades educativas especiales, es decir, tener necesidades educativas especiales. La deserción global de la cohorte es 32,1 %. Resultados por grupo: Sí: 33,3 % de deserción, 45,1 % de graduación (n = 51); No: 32,1 % de deserción, 50,0 % de graduación (n = 4373). El grupo con mayor deserción es «Sí» (33,3 %) y el de menor deserción es «No» (32,1 %), una diferencia de 1,2 puntos porcentuales. Este factor se relaciona con riesgo de tipo socioeconomico personal en la permanencia estudiantil.",
+  "evidencia": "Necesidades educativas especiales: «Sí» 33,3 % vs «No» 32,1 % de deserción"
+ },
+ {
+  "factor": "Programa académico",
+  "categoria": "academico",
+  "variable": "programa",
+  "texto": "Ficha analítica del dataset UCI Predict Students' Dropout and Academic Success (4424 estudiantes de educación superior). Factor analizado: programa académico, es decir, el programa académico. La deserción global de la cohorte es 32,1 %. Resultados por grupo: Tecnologías de producción de biocombustibles: 66,7 % de deserción, 8,3 % de graduación (n = 12); Equinocultura: 55,3 % de deserción, 29,8 % de graduación (n = 141); Ingeniería informática: 54,1 % de deserción, 8,2 % de graduación (n = 170); Administración (nocturno): 50,7 % de deserción, 29,1 % de graduación (n = 268); Educación básica: 44,3 % de deserción, 29,7 % de graduación (n = 192); Agronomía: 41,0 % de deserción, 41,4 % de graduación (n = 210); Higiene oral: 38,4 % de deserción, 41,9 % de graduación (n = 86); Turismo: 38,1 % de deserción, 45,6 % de graduación (n = 252); Diseño de animación y multimedia: 38,1 % de deserción, 44,7 % de graduación (n = 215); Gestión de publicidad y marketing: 35,4 % de deserción, 46,6 % de graduación (n = 268); Administración: 35,3 % de deserción, 36,3 % de graduación (n = 380); Servicio social (nocturno): 33,0 % de deserción, 57,2 % de graduación (n = 215); Periodismo y comunicación: 30,5 % de deserción, 59,2 % de graduación (n = 331); Enfermería veterinaria: 26,7 % de deserción, 51,0 % de graduación (n = 337); Diseño de comunicación: 22,6 % de deserción, 58,8 % de graduación (n = 226); Servicio social: 18,3 % de deserción, 69,9 % de graduación (n = 355); Enfermería: 15,4 % de deserción, 71,5 % de graduación (n = 766). El grupo con mayor deserción es «Tecnologías de producción de biocombustibles» (66,7 %) y el de menor deserción es «Enfermería» (15,4 %), una diferencia de 51,3 puntos porcentuales. Este factor se relaciona con riesgo de tipo academico en la permanencia estudiantil.",
+  "evidencia": "Programa académico: «Tecnologías de producción de biocombustibles» 66,7 % vs «Enfermería» 15,4 % de deserción"
+ }
+]

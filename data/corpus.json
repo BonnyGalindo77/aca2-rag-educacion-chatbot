@@ -1,0 +1,17 @@
+[
+ {"fuente_id": "reglamento_cun", "tipo_documento": "reglamento", "anio": 2011,
+  "titulo": "Reglamento Estudiantil CUN (Acuerdo 002 de 2011 del Consejo Directivo)",
+  "entidad": "Corporación Unificada Nacional de Educación Superior (CUN)",
+  "archivo": "reglamento_estudiantil_cun.pdf",
+  "url": "https://cdigital.cun.edu.co/pluginfile.php/364670/course/summary/Reglamento%20Estudiantil.pdf"},
+ {"fuente_id": "guia_permanencia_men", "tipo_documento": "guia_permanencia", "anio": 2015,
+  "titulo": "Guía para la implementación del modelo de gestión de permanencia y graduación estudiantil en IES",
+  "entidad": "Ministerio de Educación Nacional de Colombia",
+  "archivo": "men_guia_permanencia_2015.pdf",
+  "url": "https://www.mineducacion.gov.co/1780/articles-356272_recurso.pdf"},
+ {"fuente_id": "bienestar_men", "tipo_documento": "politica_bienestar", "anio": 2016,
+  "titulo": "Lineamientos de política de bienestar para instituciones de educación superior",
+  "entidad": "Ministerio de Educación Nacional de Colombia",
+  "archivo": "men_lineamientos_bienestar_2016.pdf",
+  "url": "https://www.mineducacion.gov.co/1780/articles-360314_recurso.pdf"}
+]

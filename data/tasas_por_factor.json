@@ -1,0 +1,306 @@
+{
+ "desercion_global_pct": 32.1,
+ "registros": 4424,
+ "tablas": {
+  "Deudor con la institución": [
+   {
+    "valor": "Sí",
+    "n": 503,
+    "pct_desercion": 62.0,
+    "pct_graduacion": 20.1,
+    "pct_matriculado": 17.9
+   },
+   {
+    "valor": "No",
+    "n": 3921,
+    "pct_desercion": 28.3,
+    "pct_graduacion": 53.8,
+    "pct_matriculado": 18.0
+   }
+  ],
+  "Matrícula al día": [
+   {
+    "valor": "No",
+    "n": 528,
+    "pct_desercion": 86.6,
+    "pct_graduacion": 5.5,
+    "pct_matriculado": 8.0
+   },
+   {
+    "valor": "Sí",
+    "n": 3896,
+    "pct_desercion": 24.7,
+    "pct_graduacion": 56.0,
+    "pct_matriculado": 19.3
+   }
+  ],
+  "Becado": [
+   {
+    "valor": "No",
+    "n": 3325,
+    "pct_desercion": 38.7,
+    "pct_graduacion": 41.3,
+    "pct_matriculado": 20.0
+   },
+   {
+    "valor": "Sí",
+    "n": 1099,
+    "pct_desercion": 12.2,
+    "pct_graduacion": 76.0,
+    "pct_matriculado": 11.8
+   }
+  ],
+  "Aprobación de asignaturas sem. 1": [
+   {
+    "valor": "0 % aprobado",
+    "n": 538,
+    "pct_desercion": 91.6,
+    "pct_graduacion": 0.4,
+    "pct_matriculado": 8.0
+   },
+   {
+    "valor": "1–50 %",
+    "n": 423,
+    "pct_desercion": 70.4,
+    "pct_graduacion": 3.5,
+    "pct_matriculado": 26.0
+   },
+   {
+    "valor": "sin asignaturas inscritas",
+    "n": 180,
+    "pct_desercion": 42.8,
+    "pct_graduacion": 41.7,
+    "pct_matriculado": 15.6
+   },
+   {
+    "valor": "51–99 %",
+    "n": 1555,
+    "pct_desercion": 25.9,
+    "pct_graduacion": 46.4,
+    "pct_matriculado": 27.7
+   },
+   {
+    "valor": "100 % aprobado",
+    "n": 1728,
+    "pct_desercion": 8.7,
+    "pct_graduacion": 80.7,
+    "pct_matriculado": 10.5
+   }
+  ],
+  "Edad al ingresar": [
+   {
+    "valor": "25–34 años",
+    "n": 697,
+    "pct_desercion": 56.5,
+    "pct_graduacion": 27.7,
+    "pct_matriculado": 15.8
+   },
+   {
+    "valor": "35 años o más",
+    "n": 441,
+    "pct_desercion": 53.7,
+    "pct_graduacion": 34.5,
+    "pct_matriculado": 11.8
+   },
+   {
+    "valor": "21–24 años",
+    "n": 735,
+    "pct_desercion": 33.7,
+    "pct_graduacion": 44.4,
+    "pct_matriculado": 21.9
+   },
+   {
+    "valor": "17–20 años",
+    "n": 2551,
+    "pct_desercion": 21.2,
+    "pct_graduacion": 60.3,
+    "pct_matriculado": 18.5
+   }
+  ],
+  "Jornada": [
+   {
+    "valor": "Nocturna",
+    "n": 483,
+    "pct_desercion": 42.9,
+    "pct_graduacion": 41.6,
+    "pct_matriculado": 15.5
+   },
+   {
+    "valor": "Diurna",
+    "n": 3941,
+    "pct_desercion": 30.8,
+    "pct_graduacion": 51.0,
+    "pct_matriculado": 18.2
+   }
+  ],
+  "Sexo": [
+   {
+    "valor": "Hombre",
+    "n": 1556,
+    "pct_desercion": 45.1,
+    "pct_graduacion": 35.2,
+    "pct_matriculado": 19.7
+   },
+   {
+    "valor": "Mujer",
+    "n": 2868,
+    "pct_desercion": 25.1,
+    "pct_graduacion": 57.9,
+    "pct_matriculado": 17.0
+   }
+  ],
+  "Desplazado": [
+   {
+    "valor": "No",
+    "n": 1998,
+    "pct_desercion": 37.6,
+    "pct_graduacion": 44.3,
+    "pct_matriculado": 18.1
+   },
+   {
+    "valor": "Sí",
+    "n": 2426,
+    "pct_desercion": 27.6,
+    "pct_graduacion": 54.6,
+    "pct_matriculado": 17.8
+   }
+  ],
+  "Necesidades educativas especiales": [
+   {
+    "valor": "Sí",
+    "n": 51,
+    "pct_desercion": 33.3,
+    "pct_graduacion": 45.1,
+    "pct_matriculado": 21.6
+   },
+   {
+    "valor": "No",
+    "n": 4373,
+    "pct_desercion": 32.1,
+    "pct_graduacion": 50.0,
+    "pct_matriculado": 17.9
+   }
+  ],
+  "Programa académico": [
+   {
+    "valor": "Tecnologías de producción de biocombustibles",
+    "n": 12,
+    "pct_desercion": 66.7,
+    "pct_graduacion": 8.3,
+    "pct_matriculado": 25.0
+   },
+   {
+    "valor": "Equinocultura",
+    "n": 141,
+    "pct_desercion": 55.3,
+    "pct_graduacion": 29.8,
+    "pct_matriculado": 14.9
+   },
+   {
+    "valor": "Ingeniería informática",
+    "n": 170,
+    "pct_desercion": 54.1,
+    "pct_graduacion": 8.2,
+    "pct_matriculado": 37.6
+   },
+   {
+    "valor": "Administración (nocturno)",
+    "n": 268,
+    "pct_desercion": 50.7,
+    "pct_graduacion": 29.1,
+    "pct_matriculado": 20.1
+   },
+   {
+    "valor": "Educación básica",
+    "n": 192,
+    "pct_desercion": 44.3,
+    "pct_graduacion": 29.7,
+    "pct_matriculado": 26.0
+   },
+   {
+    "valor": "Agronomía",
+    "n": 210,
+    "pct_desercion": 41.0,
+    "pct_graduacion": 41.4,
+    "pct_matriculado": 17.6
+   },
+   {
+    "valor": "Higiene oral",
+    "n": 86,
+    "pct_desercion": 38.4,
+    "pct_graduacion": 41.9,
+    "pct_matriculado": 19.8
+   },
+   {
+    "valor": "Turismo",
+    "n": 252,
+    "pct_desercion": 38.1,
+    "pct_graduacion": 45.6,
+    "pct_matriculado": 16.3
+   },
+   {
+    "valor": "Diseño de animación y multimedia",
+    "n": 215,
+    "pct_desercion": 38.1,
+    "pct_graduacion": 44.7,
+    "pct_matriculado": 17.2
+   },
+   {
+    "valor": "Gestión de publicidad y marketing",
+    "n": 268,
+    "pct_desercion": 35.4,
+    "pct_graduacion": 46.6,
+    "pct_matriculado": 17.9
+   },
+   {
+    "valor": "Administración",
+    "n": 380,
+    "pct_desercion": 35.3,
+    "pct_graduacion": 36.3,
+    "pct_matriculado": 28.4
+   },
+   {
+    "valor": "Servicio social (nocturno)",
+    "n": 215,
+    "pct_desercion": 33.0,
+    "pct_graduacion": 57.2,
+    "pct_matriculado": 9.8
+   },
+   {
+    "valor": "Periodismo y comunicación",
+    "n": 331,
+    "pct_desercion": 30.5,
+    "pct_graduacion": 59.2,
+    "pct_matriculado": 10.3
+   },
+   {
+    "valor": "Enfermería veterinaria",
+    "n": 337,
+    "pct_desercion": 26.7,
+    "pct_graduacion": 51.0,
+    "pct_matriculado": 22.3
+   },
+   {
+    "valor": "Diseño de comunicación",
+    "n": 226,
+    "pct_desercion": 22.6,
+    "pct_graduacion": 58.8,
+    "pct_matriculado": 18.6
+   },
+   {
+    "valor": "Servicio social",
+    "n": 355,
+    "pct_desercion": 18.3,
+    "pct_graduacion": 69.9,
+    "pct_matriculado": 11.8
+   },
+   {
+    "valor": "Enfermería",
+    "n": 766,
+    "pct_desercion": 15.4,
+    "pct_graduacion": 71.5,
+    "pct_matriculado": 13.1
+   }
+  ]
+ }
+}
