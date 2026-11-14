@@ -319,6 +319,7 @@ with tab_docs:
 
     if fuentes:
         df_f = pd.DataFrame(fuentes)
+        df_f["paginas"] = pd.to_numeric(df_f["paginas"], errors="coerce")
         izq, der = st.columns([3, 2])
         with izq:
             st.markdown("##### Documentos en la base vectorial")
