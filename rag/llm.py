@@ -56,7 +56,7 @@ class GeminiLLM:
             elif modelo.startswith("gemini-2.5-pro"):
                 kw["thinking_config"] = types.ThinkingConfig(thinking_budget=128)
             elif modelo.startswith("gemini-3") or "latest" in modelo:
-                kw["thinking_config"] = types.ThinkingConfig(thinking_level="low")
+                kw["thinking_config"] = types.ThinkingConfig(thinking_level="minimal")
         return types.GenerateContentConfig(**kw)
 
     @staticmethod
