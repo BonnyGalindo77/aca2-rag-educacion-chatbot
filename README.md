@@ -115,7 +115,9 @@ python -m pytest -q tests          # Qdrant en memoria + vectorizador léxico + 
 | `bienestar_men` | Lineamientos de política de bienestar para IES (MEN, 2016) | 104 |
 | `dataset_uci` | Fichas analíticas del dataset UCI *Predict Students' Dropout and Academic Success* (4.424 estudiantes) | 10 |
 
-El reglamento se descarga del Campus Virtual de la CUN; si el portal no responde, copie el PDF en `data/corpus/reglamento_estudiantil_cun.pdf`.
+La aplicación no necesita los PDF: consulta directamente los fragmentos ya indexados en Qdrant Cloud. Para reconstruir el índice,
+`scripts/indexar_corpus.py` descarga cada PDF de su fuente oficial o de la copia del repositorio del ACA 1. El reglamento se obtiene del
+Campus Virtual de la CUN; si el portal no responde, copie el PDF en `data/corpus/reglamento_estudiantil_cun.pdf`.
 
 ## Referencias principales (APA 7)
 
