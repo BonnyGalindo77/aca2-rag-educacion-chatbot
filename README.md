@@ -26,7 +26,7 @@ Usuario ─► Streamlit (chat + gestión documental)
              ▼
   Prompt aumentado (reglas + contexto numerado [n] + evidencia del dataset)
              ▼
-  Gemini 3.5 Flash (T = 0,2 · top-p 0,9 · 1.024 tokens · streaming) ──► verificación de citas ──► respuesta + fuentes
+  Gemini 3.5 Flash (T = 0,2 · top-p 0,9 · 2.048 tokens · streaming) ──► verificación de citas ──► respuesta + fuentes
 ```
 
 | Capa | Herramienta | Notas |
