@@ -1,0 +1,132 @@
+{
+ "objetivo": "Dropout (1) vs. Graduate/Enrolled (0)",
+ "registros": 4424,
+ "tasa_positiva": 0.3212,
+ "variables": [
+  "Edad al ingresar",
+  "Sexo (1 = hombre)",
+  "Becado",
+  "Deudor con la institución",
+  "Matrícula al día",
+  "Desplazado",
+  "Jornada diurna",
+  "Puntaje de admisión",
+  "Asignaturas inscritas sem. 1",
+  "Evaluaciones presentadas sem. 1",
+  "Asignaturas aprobadas sem. 1",
+  "Promedio sem. 1 (0–20)"
+ ],
+ "comparacion_cv5": [
+  {
+   "modelo": "Regresión logística",
+   "roc_auc": 0.8859,
+   "f1": 0.7623,
+   "recall": 0.7767,
+   "precision": 0.7496,
+   "accuracy": 0.8443,
+   "roc_auc_std": 0.0146
+  },
+  {
+   "modelo": "Random Forest",
+   "roc_auc": 0.8853,
+   "f1": 0.744,
+   "recall": 0.7573,
+   "precision": 0.732,
+   "accuracy": 0.8324,
+   "roc_auc_std": 0.0115
+  },
+  {
+   "modelo": "Gradient Boosting (HGB)",
+   "roc_auc": 0.8807,
+   "f1": 0.7421,
+   "recall": 0.7503,
+   "precision": 0.7355,
+   "accuracy": 0.8327,
+   "roc_auc_std": 0.0127
+  }
+ ],
+ "modelo_seleccionado": "Regresión logística",
+ "prueba_20pct": {
+  "roc_auc": 0.8985,
+  "pr_auc": 0.8542,
+  "f1": 0.7679,
+  "recall": 0.7746,
+  "precision": 0.7612,
+  "accuracy": 0.8497
+ },
+ "matriz_confusion": [
+  [
+   532,
+   69
+  ],
+  [
+   64,
+   220
+  ]
+ ],
+ "importancia_permutacion": [
+  {
+   "variable": "Asignaturas aprobadas sem. 1",
+   "importancia": 0.2759
+  },
+  {
+   "variable": "Asignaturas inscritas sem. 1",
+   "importancia": 0.0621
+  },
+  {
+   "variable": "Matrícula al día",
+   "importancia": 0.0444
+  },
+  {
+   "variable": "Edad al ingresar",
+   "importancia": 0.0125
+  },
+  {
+   "variable": "Becado",
+   "importancia": 0.007
+  },
+  {
+   "variable": "Sexo (1 = hombre)",
+   "importancia": 0.0068
+  },
+  {
+   "variable": "Promedio sem. 1 (0–20)",
+   "importancia": 0.0062
+  },
+  {
+   "variable": "Desplazado",
+   "importancia": 0.0015
+  },
+  {
+   "variable": "Deudor con la institución",
+   "importancia": 0.0008
+  },
+  {
+   "variable": "Evaluaciones presentadas sem. 1",
+   "importancia": 0.0005
+  },
+  {
+   "variable": "Jornada diurna",
+   "importancia": 0.0003
+  },
+  {
+   "variable": "Puntaje de admisión",
+   "importancia": 0.0003
+  }
+ ],
+ "umbral_decision": 0.5,
+ "bandas_riesgo": {
+  "bajo": [
+   0,
+   0.3
+  ],
+  "medio": [
+   0.3,
+   0.6
+  ],
+  "alto": [
+   0.6,
+   1.0
+  ]
+ }
+}
