@@ -98,7 +98,17 @@ class RAGPipeline:
 
         consulta = self.reescribir(pregunta, historial) if reescribir and historial else pregunta
         t_reesc = (time.perf_counter() - t_inicio) * 1000
-        puntos, utiles, tiempos = self.recuperar(consulta, k=k, umbral=umbral, filtros=filtros)
+        try:
+            puntos, utiles, tiempos = self.recuperar(consulta, k=k, umbral=umbral, filtros=filtros)
+        except Exception as e:   # credencial inválida, clúster suspendido o cuota agotada en la búsqueda
+            msg = str(e)
+            causa = ("la API key de Google no es válida" if "API_KEY_INVALID" in msg or "API key not valid" in msg
+                     else "se agotó la cuota gratuita de embeddings" if "429" in msg or "RESOURCE_EXHAUSTED" in msg
+                     else "no hubo respuesta del clúster de Qdrant Cloud")
+            return Resultado(pregunta=pregunta, consulta=consulta, estado="error_busqueda", error=msg[:400],
+                             respuesta=f"No pude consultar la base vectorial en este momento: {causa}. "
+                                       "Intenta de nuevo en unos minutos.",
+                             tiempos={"total_ms": (time.perf_counter() - t_inicio) * 1000})
         tiempos["reescritura_ms"] = t_reesc
 
         res = Resultado(pregunta=pregunta, consulta=consulta, tiempos=tiempos,
