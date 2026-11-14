@@ -244,7 +244,7 @@ def ejecutar_rag(pregunta, historial, contenedor, stream=True):
                 st.warning(r.respuesta)
         elif r.estado == "sin_evidencia":
             st.info(r.respuesta, icon=":material/search_off:")
-        elif r.estado == "error_llm":
+        elif r.estado in ("error_llm", "error_busqueda"):
             st.warning(r.respuesta, icon=":material/cloud_off:")
             with st.expander("Detalle técnico"):
                 st.code(r.error)
