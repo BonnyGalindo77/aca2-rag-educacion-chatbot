@@ -26,14 +26,14 @@ Usuario ─► Streamlit (chat + gestión documental)
              ▼
   Prompt aumentado (reglas + contexto numerado [n] + evidencia del dataset)
              ▼
-  Gemini 2.5 Flash (T = 0,2 · top-p 0,9 · 1.024 tokens · streaming) ──► verificación de citas ──► respuesta + fuentes
+  Gemini 3.5 Flash (T = 0,2 · top-p 0,9 · 1.024 tokens · streaming) ──► verificación de citas ──► respuesta + fuentes
 ```
 
 | Capa | Herramienta | Notas |
 |---|---|---|
 | Base vectorial | Qdrant Cloud (free tier 1 GB) | Colección del ACA 1: 610 fragmentos, vectores nombrados `gemini` (768 d) y `e5` (384 d) |
 | Embeddings | Gemini `gemini-embedding-2` | Mismo modelo y formato de entrada del ACA 1 (`task: search result \| query: …`) |
-| LLM | Gemini API (`gemini-2.5-flash`, respaldo `gemini-flash-latest` / `-lite`) | Capa gratuita de Google AI Studio |
+| LLM | Gemini API (`gemini-3.5-flash`, respaldo `gemini-flash-latest` / `-lite`) | Capa gratuita de Google AI Studio |
 | Orquestación | Python nativo (`rag/`) | Sin LangChain en ejecución; `langchain-text-splitters` solo para ingesta |
 | Interfaz | Streamlit | Desplegada en Streamlit Community Cloud |
 | Analítica | scikit-learn | Modelo de alerta temprana de deserción (regresión logística) |

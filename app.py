@@ -78,8 +78,8 @@ def modelos_llm(_cfg_key: str) -> list[str]:
         disponibles = GeminiLLM(cfg.google_api_key, cfg.llm_model).modelos_disponibles()
     except Exception:
         disponibles = []
-    preferidos = [cfg.llm_model, "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-latest"]
-    orden = [m for m in preferidos if not disponibles or m in disponibles or m == cfg.llm_model]
+    preferidos = [cfg.llm_model, "gemini-3.5-flash", "gemini-3.5-flash-lite"]
+    orden = [m for m in preferidos if not disponibles or m in disponibles]
     return list(dict.fromkeys(orden + [m for m in disponibles if "flash" in m]))
 
 
