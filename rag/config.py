@@ -49,8 +49,8 @@ class Config:
     embed_dim: int = 768
 
     # Modelo generativo
-    llm_model: str = "gemini-2.5-flash"
-    llm_respaldo: tuple = ("gemini-flash-latest", "gemini-2.5-flash-lite")
+    llm_model: str = "gemini-3.5-flash"
+    llm_respaldo: tuple = ("gemini-3.5-flash", "gemini-3.5-flash-lite", "gemini-flash-latest")
     temperatura: float = 0.2
     top_p: float = 0.9
     max_tokens: int = 1024

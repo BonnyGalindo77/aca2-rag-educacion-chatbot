@@ -19,7 +19,7 @@ class ErrorLLM(RuntimeError):
 
 
 class GeminiLLM:
-    def __init__(self, api_key: str, modelo: str = "gemini-2.5-flash", respaldo=(), max_reintentos: int = 3):
+    def __init__(self, api_key: str, modelo: str = "gemini-3.5-flash", respaldo=(), max_reintentos: int = 3):
         from google import genai
 
         if not api_key:
@@ -81,7 +81,11 @@ class GeminiLLM:
             while True:
                 try:
                     self.modelo_usado = modelo
-                    return fn(modelo, con_thinking)
+                    salida = fn(modelo, con_thinking)
+                    if modelo != self.modelo:          # recuerda el modelo que sí respondió
+                        self.respaldo = [m for m in [self.modelo, *self.respaldo] if m != modelo]
+                        self.modelo = modelo
+                    return salida
                 except Exception as e:
                     ultimo, msg = e, str(e)
                     if "thinking" in msg.lower() and con_thinking:
