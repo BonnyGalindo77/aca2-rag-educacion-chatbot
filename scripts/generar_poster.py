@@ -80,7 +80,7 @@ def construir_html():
 
     def enlace(nombre, url):
         if not url:
-            return f'<div class="link"><div class="qrph">QR</div><div><b>{nombre}</b><br><span class="pend">pendiente</span></div></div>'
+            return ""  # sin enlace: el bloque no se muestra
         return (f'<div class="link">{qr_svg(url)}<div><b>{nombre}</b><br><a href="{url}">{html.escape(url)}</a></div></div>')
 
     cv = "".join(f"<tr><td>{c['modelo']}</td><td>{n(c['roc_auc'], 3)}</td><td>{n(c['f1'], 3)}</td><td>{n(c['recall'], 3)}</td></tr>"
